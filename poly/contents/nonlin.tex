@@ -104,8 +104,8 @@ Dans le cas d'un problème de régression, on utilisera tout simplement l'identité
 Le cas de la classification binaire, utilisant un seuil comme fonction
 d'activation, est historiquement le premier à avoir été traité.  On utilisera
 plutôt, comme dans le cas de la régression logistique (voir PC~5), une fonction
-logistique pour modéliser la probabilité d'appartenir à la classe positive. Le
-modèle appris est donc
+logistique (voir équation~\eqref{eq:sigmoide}) pour modéliser la probabilité
+d'appartenir à la classe positive. Le modèle appris est donc
 \begin{equation}
   \xx \mapsto \frac1{1 + e^{- o(\xx)}} = 
   \frac1{1 + \exp \left( - \innerproduct{\ww,~\xx} \right)}.
@@ -674,7 +674,7 @@ différents à partir d'un unique jeu de données ? Le \textbf{bagging} est une
 méthode parallèle, basée sur le ré-échantillonnage, qui permet de créer des
 arbres indépendants les uns des autres.
 
-Il consiste à former $B$ versions de $\DD$ par \textbf{échantillonage
+Il consiste à former $B$ versions de $\DD$ par \textbf{échantillonnage
   bootstrap}, autrement dit en tirant $n$ exemples de $\DD$ {\it avec
   remplacement}. Ainsi, chaque exemple peut apparaître plusieurs fois, ou pas
 du tout, dans $\DD_b$. Chaque arbre est entraîné sur un de ces échantillons
